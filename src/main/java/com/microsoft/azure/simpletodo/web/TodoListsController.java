@@ -127,7 +127,9 @@ public class TodoListsController implements ListsApi {
         if (skip == null) {
             skip = new BigDecimal(0);
         }
-        return ResponseEntity.ok(todoListRepository.findAll(PageRequest.of(skip.intValue(), top.intValue())).getContent());
+        List<TodoList> list = todoListRepository.findAll(PageRequest.of(skip.intValue(), top.intValue())).getContent();
+        list.add(new TodoList().name("mock"));
+        return ResponseEntity.ok(list);
     }
 
     @Override
