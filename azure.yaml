@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: generated-by-azure-initializr
+metadata:
+  template: generated-by-azure-initializr@0.0.1-beta
+services:
+  app:
+    project: ./
+    language: java
+#    host: springapps
+    host: containerapp
+    infra:
+      provider: terraform
+      path: infra/app
+infra:
+  provider: terraform
